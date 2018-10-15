@@ -14,6 +14,7 @@ Setup instruction:
 3. For testing create seperate test database and place it in DB_TEST_DATABASE
 4. generate APP_KEY by 'php artisan key:generate' from the application root.
 5. composer update to get all the dependencies.
+6. Run 'sudo php artisan migrate' to run the database migrations.
 
 Testing: 
 
