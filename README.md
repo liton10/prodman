@@ -23,4 +23,4 @@ Create the database and run 'php artisan migrate --database=testdb' to run the m
 Just run 'sudo vendor/bin/phpunit' from the application root to run the test. Test database gets truncated after the test is run.
 
 Time:
-It took around 10 Hours to complete the test.
+It took around 10 Hours to complete the project.
