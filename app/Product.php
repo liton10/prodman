@@ -19,7 +19,11 @@ class Product extends Model
     protected $perPage =10;
     public $sortable = ['name', 'price'];
 
-    // Validations rules definitions
+    /**
+     * Validation rules for the model
+     *
+     * @return array
+     */
     public static function getRules()
     {
         return [

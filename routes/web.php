@@ -15,10 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 */
-Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
-Route::post('add', ['as' => 'add', 'uses' => 'HomeController@add']);
-Route::get('add', ['as' => 'add', 'uses' => 'HomeController@add']);
-Route::get('view/{id}', ['as' => 'view', 'uses' => 'HomeController@show'])->where('id', '[0-9]+');
-Route::get('edit/{id}', ['as' => 'edit', 'uses' => 'HomeController@edit'])->where('id', '[0-9]+');
-Route::post('productEdit/{id}', ['as' => 'productEdit', 'uses' => 'HomeController@postEdit'])->where('id', '[0-9]+');
-Route::get('delete/{id}', ['as' => 'delete', 'uses' => 'HomeController@delete'])->where('id', '[0-9]+');
+Route::get('/', ['as' => 'home', 'uses' => 'ProductController@index']);
+Route::post('add', ['as' => 'add', 'uses' => 'ProductController@add']);
+Route::get('add', ['as' => 'add', 'uses' => 'ProductController@add']);
+Route::get('view/{id}', ['as' => 'view', 'uses' => 'ProductController@show'])->where('id', '[0-9]+');
+Route::get('edit/{id}', ['as' => 'edit', 'uses' => 'ProductController@edit'])->where('id', '[0-9]+');
+Route::post('productEdit/{id}', ['as' => 'productEdit', 'uses' => 'ProductController@postEdit'])->where('id', '[0-9]+');
+Route::get('delete/{id}', ['as' => 'delete', 'uses' => 'ProductController@delete'])->where('id', '[0-9]+');

@@ -8,14 +8,29 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Product;
 
-class HomeController extends Controller
+/**
+ *
+ * Product Controller.
+ */  
+class ProductController extends Controller
 {
-    public function index(Request $request)
+    /**
+    * Lists all products
+    *
+    * @return mixed
+    */
+    public function index()
     {
     	$products = Product::sortable()->paginate(10);
         return view("home.index", compact('products'));
     }
 
+    /**
+    * Adds products
+    *
+    * @param mixed $request
+    * @return mixed
+    */
     public function add(Request $request)
     {	
     	if ($request->method() == 'GET') {
@@ -38,18 +53,36 @@ class HomeController extends Controller
         return view("home.view", compact('product'));
     }
 
+    /**
+    * Shows products
+    *
+    * @param integer $id
+    * @return mixed
+    */
     public function show($id)
     {
         $product = Product::findOrFail($id);
         return view("home.view", compact('product'));
     }
 
+    /**
+    * Show edit form for product
+    *
+    * @param integer $id
+    * @return mixed
+    */
     public function edit($id)
     {
         $product = Product::findOrFail($id);
         return view("home.edit", compact('product'));
     }
 
+    /**
+    * Deletes products
+    *
+    * @param integer $id
+    * @return mixed
+    */
     public function delete($id)
     {	
     	$result = [];
@@ -66,6 +99,13 @@ class HomeController extends Controller
     	return response()->json($result);
     }
 
+    /**
+    * Deletes products
+    *
+    * @param  mixed  $request
+    * @param integer $id
+    * @return mixed
+    */
     public function postEdit(Request $request, $id = null)
     {
 
